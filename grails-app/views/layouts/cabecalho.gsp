@@ -72,7 +72,7 @@ body {
 </body>
 
 <footer>
-	<p>&copy; Cliente Leilão 2014</p>
+	<p>&copy; Cliente Leilão 2014 - Test Git</p>
 </footer>
 
 
