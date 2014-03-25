@@ -7,7 +7,6 @@
 <body>
 	<h3>Produtos:</h3>
 
-
 	<g:each in="${test}">
 		<p>
 			Nome

@@ -5,8 +5,8 @@
 </head>
 <body>
     <h3>Vender Serviço: </h3>  
-
-    <form method="post"  class="form-horizontal" action="http://luizvarela666-public_sales.nodejitsu.com/services">
+	
+    <g:form method="post" action="submitForm"  class="form-horizontal">
     <%--
 
       <div class="form-group">
@@ -86,7 +86,7 @@
           <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
       </div>
-    </form>
+    </g:form>
 
    
   </body>

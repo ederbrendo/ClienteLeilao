@@ -6,7 +6,7 @@
 <body>
     <h3>Leiloar Produto: </h3>  
 
-    <form method="post"  class="form-horizontal" action="http://luizvarela666-public_sales.nodejitsu.com/products">
+    <g:form method="post" action="submitForm" class="form-horizontal" >
  
           <div class="form-group">
         <label class="col-sm-2 control-label">Nome</label>
@@ -79,7 +79,8 @@
           <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
       </div>
-    </form>
+     </g:form>
+
 
    
   </body>

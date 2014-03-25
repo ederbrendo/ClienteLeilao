@@ -1,11 +1,11 @@
 package clienteleilao
 import clienteleilao.Servico
-
 import static org.springframework.http.HttpStatus.*
 
 import java.sql.ResultSet;
 import java.util.Collections.EmptyMap;
 
+import grails.converters.JSON;
 import grails.transaction.Transactional
 import groovy.json.JsonSlurper
 
@@ -61,10 +61,36 @@ class ServicoController {
         respond servicoInstance
     }
 
-	
+	def create(){
+		respond new Servico(params)
+	}
 
-    def create() {
-        respond new Servico(params)
+    def submitForm() {
+		def urlBase = "http://luizvarela666-public_sales.nodejitsu.com"
+		def urlPath = "/services"
+		def postData = params
+		withHttp(uri: "http://www.luizvarela666-public_sales.nodejitsu.com/services") {
+		   def retorno = post(body:params)
+		   println retorno
+		   
+		}
+		/*withHttp(uri:"http://luizvarela666-public_sales.nodejitsu.com"){
+			def retorno = post(path:"/services"){
+				headers.'User-Agent' = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36'
+			}
+			println retorno.stat
+			println retorno
+		}
+		*/
+		flash.message = "Serviço Cadastrado com Sucesso!"
+		
+		redirect(uri: "/")
+		
+		/*def url = new URL("http://luizvarela666-public_sales.nodejitsu.com/services")
+		def http = new HTTPBuilder("http://luizvarela666-public_sales.nodejitsu.com/services")
+		
+		
+        respond new Servico(params)*/
     }
 
     @Transactional
