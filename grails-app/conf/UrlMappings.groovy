@@ -9,7 +9,6 @@ class UrlMappings {
 
         "/"(view:"/index")
         "500"(view:'/error')
-		"/cadastroItem"(view:'/cadastroItem')
-		"/listar" (view:"/servicos",controller: 'Servico', action: 'listaServicos()')
+		
 	}
 }

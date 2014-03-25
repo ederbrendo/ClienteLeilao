@@ -38,11 +38,12 @@ body {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="${createLink(uri: '/')}">Cliente Leilão</a>
+				<a class="navbar-brand" href="${createLink(uri: '/')}">Cliente
+					Leilão</a>
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-
+<g:if test="${session.usuario}">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Menu Principal <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -58,12 +59,40 @@ body {
 							<li><a href="${createLink(uri: '/servico/index')}">Contratar
 									- Serviço</a></li>
 							<li class="dropdown-header">Usuário</li>
-							<li><a href="${createLink(uri: '/usuario/create')}"">Cadastrar
+							<li><a href="${createLink(uri: '/usuario/create')}">Cadastrar
 									- Usuário</a></li>
 
 							<li class="divider"></li>
 						</ul></li>
+						</g:if>
 				</ul>
+				
+				<div class="navbar-collapse collapse">
+					<g:if test="${!session.usuario}">
+						<g:form method="post" controller="Usuario" action="logar"
+						
+							class="navbar-form navbar-right" role="form">
+							<div class="form-group">
+								<input name="cpfCnpj" type="text"
+									placeholder="Digite Seu CPF/CNPJ" class="form-control">
+							</div>
+							<button type="submit" class="btn btn-success">Entrar</button>
+							<a href="${createLink(uri: '/usuario/create')}"
+								class="btn btn-warning" role="button">Cadastrar CPF/CNPJ</a>
+
+						</g:form>
+					</g:if>
+					<g:if test="${session.usuario}">
+						<g:form method="post" controller="Usuario" action="logout"
+						
+							class="navbar-form navbar-right" role="form">
+							
+							<button type="submit" class="btn btn-success">Sair</button>
+							
+						</g:form>
+						</g:if>
+				</div>
+				<!--/.navbar-collapse -->
 			</div>
 			<!--/.nav-collapse -->
 		</div>

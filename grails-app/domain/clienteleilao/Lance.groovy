@@ -1,6 +1,6 @@
 package clienteleilao
 
-class Lance {
+class Lance extends Produto {
 	
 	Date dataHora
 	double valor

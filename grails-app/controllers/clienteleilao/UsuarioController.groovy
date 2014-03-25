@@ -22,6 +22,32 @@ class UsuarioController {
     def create() {
         respond new Usuario(params)
     }
+	
+	def logar(){
+	
+		def usuario = new Usuario()
+		
+		usuario.cpfCnpj = params.cpfCnpj
+		
+		session.usuario = usuario
+		
+		flash.message = "Bem vindo ${session.usuario.cpfCnpj}!"
+		
+			redirect(uri: "/")
+	}
+	
+	def logout() {
+		
+		def saida = "${session.usuario.cpfCnpj}"
+		
+		session.removeAttribute("usuario");
+		session.invalidate()
+		
+		flash.message = "Usuario ${saida} saiu"
+		
+		redirect(uri: "/")
+		
+	}
 
     @Transactional
     def save(Usuario usuarioInstance) {

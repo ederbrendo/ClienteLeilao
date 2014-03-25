@@ -1,6 +1,6 @@
 package clienteleilao
 
-class Compra {
+class Compra extends Servico {
 	
 	Date data
 	double valor
@@ -8,5 +8,6 @@ class Compra {
 	String tipoEntrega
 
     static constraints = {
-    }
+}
+	
 }
