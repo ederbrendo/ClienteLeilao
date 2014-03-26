@@ -4,6 +4,7 @@
 <meta name="layout" content="cabecalho" />
 <r:require modules="bootstrap" />
 </head>
+<g:if test="${session.usuario}">
 <body>
 	<h3>Serviços:</h3>
 
@@ -45,7 +46,7 @@
 						<td>${list.inicio_servico}</td>
 						<td>${list.duracao_dias}</td>
 						<td>${list.periodo}</td>
-						<td><button type="submit" class="btn btn-default">Contratar</button></td>
+						<td><a href="${createLink(uri: '/compra/create')}?id=${list._id}" class="btn btn-default">Contratar</a></td>
 					</tr>
 				</g:each>
 			</tbody>
@@ -53,4 +54,5 @@
 	</div>
 
 </body>
+</g:if>
 </html>

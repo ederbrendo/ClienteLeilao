@@ -58,10 +58,6 @@ body {
 									um lance - Produto</a></li>
 							<li><a href="${createLink(uri: '/servico/index')}">Contratar
 									- Serviço</a></li>
-							<li class="dropdown-header">Usuário</li>
-							<li><a href="${createLink(uri: '/usuario/create')}">Cadastrar
-									- Usuário</a></li>
-
 							<li class="divider"></li>
 						</ul></li>
 						</g:if>
@@ -101,7 +97,7 @@ body {
 </body>
 
 <footer>
-	<p>&copy; Cliente Leilão 2014 - Test Git</p>
+	<p>&copy; Cliente Leilão 2014</p>
 </footer>
 
 

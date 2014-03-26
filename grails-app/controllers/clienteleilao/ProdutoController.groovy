@@ -11,7 +11,11 @@ class ProdutoController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-	def index(Integer max) {
+	/**
+	 * ProdutoController.index(): Recebe o JSON da URL e Converte para um HASHMAP, em seguida
+	 * envia para a página.
+	 */
+	def index() {
 
 
 		def test = new URL("http://luizvarela666-public_sales.nodejitsu.com/products").text
@@ -19,6 +23,8 @@ class ProdutoController {
 		def result = slurper.parseText(test)
 
 		request.setAttribute('result',result)
+		
+		println result
 
 		respond result
 	}
@@ -31,15 +37,18 @@ class ProdutoController {
 		respond new Produto(params)
 	}
 
+	/**
+	 * ProdutoController.submitForm(): Utilizando o "Grails REST Plugin" para enviar as informações
+	 * para o Servidor externo.
+	 */
 	def submitForm() {
-		def urlBase = "http://luizvarela666-public_sales.nodejitsu.com"
-		def urlPath = "/products"
-		def postData = params
+		
 		withHttp(uri: "http://www.luizvarela666-public_sales.nodejitsu.com/products") {
 			def retorno = post(body:params)
 			println retorno
 		}
 
+		
 		flash.message = "Produto Cadastrado com Sucesso!"
 
 		redirect(uri: "/")

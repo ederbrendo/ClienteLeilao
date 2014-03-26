@@ -3,6 +3,7 @@
 <meta name="layout" content="cabecalho" />
 <r:require modules="bootstrap"/>
 </head>
+<g:if test="${!session.usuario}">
 <body>
    		<h3>Cadastrar Usuario: </h3>
 
@@ -54,4 +55,5 @@
 
    		</form>
    </body>
+   </g:if>
 </html>

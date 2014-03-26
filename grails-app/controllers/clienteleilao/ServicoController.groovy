@@ -14,7 +14,11 @@ class ServicoController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-	def index(Integer max) {
+	/**
+	 * ServicoController.index(): Recebe o JSON da URL e Converte para um HASHMAP, em seguida
+	 * envia para a página.
+	 */
+	def index() {
 		def test = new URL("http://luizvarela666-public_sales.nodejitsu.com/services").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
@@ -33,10 +37,12 @@ class ServicoController {
 		respond new Servico(params)
 	}
 
+	/**
+	 * ServicoController.submitForm(): Utiliza o "Grails REST Plugin" para enviar as informações
+	 * para o Servidor externo.
+	 */
 	def submitForm() {
-		def urlBase = "http://luizvarela666-public_sales.nodejitsu.com"
-		def urlPath = "/services"
-		def postData = params
+		
 		withHttp(uri: "http://www.luizvarela666-public_sales.nodejitsu.com/services") {
 			def retorno = post(body:params)
 			println retorno

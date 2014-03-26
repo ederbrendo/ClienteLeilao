@@ -5,6 +5,18 @@ package clienteleilao
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
+/**
+ * @author Ederbrendo
+ *
+ */
+/**
+ * @author Ederbrendo
+ *
+ */
+/**
+ * @author Ederbrendo
+ *
+ */
 @Transactional(readOnly = true)
 class UsuarioController {
 
@@ -23,6 +35,9 @@ class UsuarioController {
         respond new Usuario(params)
     }
 	
+	/**
+	 * UsuarioController.logar() : Coloca o usuário em sessão (Em Construção).
+	 */
 	def logar(){
 	
 		def usuario = new Usuario()
@@ -36,6 +51,9 @@ class UsuarioController {
 			redirect(uri: "/")
 	}
 	
+	/**
+	 * UsuarioController.logout() : Retira o usuario de sessão.
+	 */
 	def logout() {
 		
 		def saida = "${session.usuario.cpfCnpj}"
