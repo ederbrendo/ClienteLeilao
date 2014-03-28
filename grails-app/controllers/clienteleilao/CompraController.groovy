@@ -33,7 +33,7 @@ class CompraController {
 		
 		println test
 		
-		render test
+		render test as JSON
 	}
 
     /**
@@ -43,17 +43,17 @@ class CompraController {
     def create() {
         //respond new Compra(params)
 		
-		String id = params["id"]
+		String nome = params["nome"]
 		
-		def test = new URL("http://luizvarela666-public_sales.nodejitsu.com/services").text
+		def test = new URL("http://luizvarela666-public-sales.jit.su/services").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 		def cont = 0
 		
 		
-		for (i in result) {
-		
-			if(i._id==id){
+		//for (i in result) {
+		result.each{
+			if(it.nome==nome){
 				
 				request.setAttribute('list',result[cont])
 				

@@ -54,8 +54,7 @@
 						<td>
 							${list.data_inicial}
 						</td>
-						<td><button type="submit" class="btn btn-default">Dar
-								Lance</button></td>
+						<td><a href="${createLink(uri: '/lance/create')}?nome=${list.nome}" class="btn btn-default">Dar Lance</a></td></td>
 					</tr>
 			</g:each>
 			</tbody>

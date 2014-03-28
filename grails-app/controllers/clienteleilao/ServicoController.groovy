@@ -19,7 +19,7 @@ class ServicoController {
 	 * envia para a página.
 	 */
 	def index() {
-		def test = new URL("http://luizvarela666-public_sales.nodejitsu.com/services").text
+		def test = new URL("http://luizvarela666-public-sales.jit.su/services").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 
@@ -43,7 +43,7 @@ class ServicoController {
 	 */
 	def submitForm() {
 		
-		withHttp(uri: "http://www.luizvarela666-public_sales.nodejitsu.com/services") {
+		withHttp(uri: "http://luizvarela666-public-sales.jit.su/services") {
 			def retorno = post(body:params)
 			println retorno
 		}

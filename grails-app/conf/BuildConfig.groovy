@@ -59,6 +59,8 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.0.1"
         compile ':cache:1.1.1'
+		
+		compile ":jquery-ui:1.10.3"
 
 		compile ":twitter-bootstrap:3.1.1"
 		

@@ -18,7 +18,7 @@ class ProdutoController {
 	def index() {
 
 
-		def test = new URL("http://luizvarela666-public_sales.nodejitsu.com/products").text
+		def test = new URL("http://luizvarela666-public-sales.jit.su/products").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 
@@ -43,7 +43,7 @@ class ProdutoController {
 	 */
 	def submitForm() {
 		
-		withHttp(uri: "http://www.luizvarela666-public_sales.nodejitsu.com/products") {
+		withHttp(uri: "http://luizvarela666-public-sales.jit.su/products") {
 			def retorno = post(body:params)
 			println retorno
 		}
