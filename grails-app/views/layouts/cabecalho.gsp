@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
+<title><g:layoutTitle default="Cliente Leilão" /></title>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cliente Leilão</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript"
-	src="/ClienteLeilao/web-app/js/cnpjMask/cnpj.js"></script>
-<script src="/ClienteLeilao/web-app/js/cnpjMask/maskCnpj.js"
-	type="text/javascript" /></script>
+
+<r:require module="jquery-ui" />
+<r:require module="bootstrap" />
+
+
+<g:layoutHead />
+<r:layoutResources />
 
 </head>
 <g:layoutTitle />
@@ -23,7 +26,6 @@ body {
 	padding-right: 60px;
 }
 </style>
-
 <r:layoutResources />
 </head>
 <body>
@@ -43,30 +45,29 @@ body {
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-<g:if test="${session.usuario}">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Menu Principal <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li class="dropdown-header">Vendas</li>
-							<li><a href="${createLink(uri: '/produto/create')}"">Leiloar
-									- Produto</a></li>
-							<li><a href="${createLink(uri: '/servico/create')}">Vender
-									- Serviço</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Compras</li>
-							<li><a href="${createLink(uri: '/produto/index')}">Dar
-									um lance - Produto</a></li>
-							<li><a href="${createLink(uri: '/servico/index')}">Contratar
-									- Serviço</a></li>
-							<li class="divider"></li>
-						</ul></li>
-						</g:if>
+					<g:if test="${session.usuario}">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">Menu Principal <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-header">Vendas</li>
+								<li><a href="${createLink(uri: '/produto/create')}"">Leiloar
+										- Produto</a></li>
+								<li><a href="${createLink(uri: '/servico/create')}">Vender
+										- Serviço</a></li>
+								<li class="divider"></li>
+								<li class="dropdown-header">Compras</li>
+								<li><a href="${createLink(uri: '/produto/index')}">Dar
+										um lance - Produto</a></li>
+								<li><a href="${createLink(uri: '/servico/index')}">Contratar
+										- Serviço</a></li>
+								<li class="divider"></li>
+							</ul></li>
+					</g:if>
 				</ul>
-				
+
 				<div class="navbar-collapse collapse">
 					<g:if test="${!session.usuario}">
 						<g:form method="post" controller="Usuario" action="logar"
-						
 							class="navbar-form navbar-right" role="form">
 							<div class="form-group">
 								<input name="cpfCnpj" type="text"
@@ -80,13 +81,12 @@ body {
 					</g:if>
 					<g:if test="${session.usuario}">
 						<g:form method="post" controller="Usuario" action="logout"
-						
 							class="navbar-form navbar-right" role="form">
-							
+
 							<button type="submit" class="btn btn-success">Sair</button>
-							
+
 						</g:form>
-						</g:if>
+					</g:if>
 				</div>
 				<!--/.navbar-collapse -->
 			</div>

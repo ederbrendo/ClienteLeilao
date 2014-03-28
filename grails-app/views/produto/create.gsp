@@ -1,8 +1,17 @@
-<html>
+<html lang="pt">
 <head>
 <meta name="layout" content="cabecalho" />
-<r:require modules="bootstrap"/>
-</head>
+
+ <r:script>
+  $(function() {
+    $( "#datepicker" ).datepicker({dateFormat: 'dd/mm/yy'});
+     $( "#datepicker2" ).datepicker({dateFormat: 'dd/mm/yy'});
+    
+  });
+  </r:script>
+  
+
+</head>  
 <g:if test="${session.usuario}">
 <body>
     <h3>Leiloar Produto: </h3>  
@@ -63,14 +72,14 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Tempo de Leilao</label>
           <div class="col-sm-10">
-            <input name= "tempo_leilao" id="data" type="datetime-local" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
+            <input type="text" id="datepicker2" name= "tempo_leilao" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
           </div>
       </div>
       
       <div class="form-group">
         <label class="col-sm-2 control-label">Data de Inicio do Leilao</label>
           <div class="col-sm-10">
-            <input name="data_inicial" type="date" name="data" class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
+            <input type="text" id="datepicker" name="data_inicial"  class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
           </div>
       </div>    
 
