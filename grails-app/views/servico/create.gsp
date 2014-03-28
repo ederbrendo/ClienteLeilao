@@ -63,7 +63,7 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Inicio do Serviço</label>
           <div class="col-sm-10">
-            <input name="inicio_servico" type="date" name="data" class="form-control" style="width:150px" >
+            <input id="datepicker" name="inicio_servico" type="text" class="form-control" style="width:150px" >
           </div>
       </div>    
       
@@ -88,6 +88,30 @@
         </div>
       </div>
     </g:form>
+    
+    <script type="text/javascript" src="${resource(dir:'js', file: 'jquery.datetimepicker.js')}"></script>
+ <link rel="stylesheet" href="${resource(dir:'css', file: 'jquery.datetimepicker.css')}" type="text/css">
+ <script type="text/javascript" src="js/jquery.ui.datepicker-pt-BR.js"></script>´
+ 
+ <r:script>
+  $(function() {
+    $( "#datepicker" ).datetimepicker({
+    
+    lang:'pt' , 
+    timepicker:false,
+    format:'d/m/Y'
+    
+    });
+    
+    $('#datetimepicker').datetimepicker({
+    
+    lang:'pt',
+    format:'d/m/Y H:i'
+    
+    });
+  });
+  </r:script>
+  
 
    
   </body>

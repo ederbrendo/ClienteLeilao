@@ -2,15 +2,7 @@
 <head>
 <meta name="layout" content="cabecalho" />
 
- <r:script>
-  $(function() {
-    $( "#datepicker" ).datepicker({dateFormat: 'dd/mm/yy'});
-     $( "#datepicker2" ).datepicker({dateFormat: 'dd/mm/yy'});
-    
-  });
-  </r:script>
-  
-
+ 
 </head>  
 <g:if test="${session.usuario}">
 <body>
@@ -72,14 +64,14 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Tempo de Leilao</label>
           <div class="col-sm-10">
-            <input type="text" id="datepicker2" name= "tempo_leilao" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
+            <input type="text" id="datetimepicker" name= "tempo_leilao" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
           </div>
       </div>
       
       <div class="form-group">
         <label class="col-sm-2 control-label">Data de Inicio do Leilao</label>
           <div class="col-sm-10">
-            <input type="text" id="datepicker" name="data_inicial"  class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
+            <input type="text" id="datepicker"  name="data_inicial"  class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
           </div>
       </div>    
 
@@ -91,6 +83,29 @@
       </div>
      </g:form>
 
+ <script type="text/javascript" src="${resource(dir:'js', file: 'jquery.datetimepicker.js')}"></script>
+ <link rel="stylesheet" href="${resource(dir:'css', file: 'jquery.datetimepicker.css')}" type="text/css">
+ <script type="text/javascript" src="js/jquery.ui.datepicker-pt-BR.js"></script>´
+ 
+ <r:script>
+  $(function() {
+    $( "#datepicker" ).datetimepicker({
+    
+    lang:'pt' , 
+    timepicker:false,
+    format:'d/m/Y'
+    
+    });
+    
+    $('#datetimepicker').datetimepicker({
+    
+    lang:'pt',
+    format:'d/m/Y H:i'
+    
+    });
+  });
+  </r:script>
+  
 
    
   </body>

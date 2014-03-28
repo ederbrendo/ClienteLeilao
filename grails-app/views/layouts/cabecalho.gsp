@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
 
 <title><g:layoutTitle default="Cliente Leilão" /></title>
