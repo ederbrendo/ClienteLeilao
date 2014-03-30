@@ -44,7 +44,7 @@
           <div class="col-sm-10">
             <input name="categoria" type="text" class="form-control" placeholder="Nome" style="width:400px">
           </div>
-      </div>
+      </div><%--
 
 
       <div class="form-group">
@@ -61,17 +61,17 @@
           </div>
       </div>
       
-      <div class="form-group">
+      --%><div class="form-group">
         <label class="col-sm-2 control-label">Tempo de Leilao</label>
           <div class="col-sm-10">
-            <input type="text" id="datetimepicker" name= "tempo_leilao" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
+            <input type="date" name= "tempo_leilao" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
           </div>
       </div>
       
       <div class="form-group">
         <label class="col-sm-2 control-label">Data de Inicio do Leilao</label>
           <div class="col-sm-10">
-            <input type="text" id="datepicker"  name="data_inicial"  class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
+            <input type="date" name="data_inicial"  class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
           </div>
       </div>    
 
@@ -100,9 +100,20 @@
     $('#datetimepicker').datetimepicker({
     
     lang:'pt',
-    format:'d/m/Y H:i'
+    timepicker:false,
+    format:'d/m/Y'
     
     });
+    
+    $(function() {
+    $( "#datepickertest1" ).datepicker({ dateFormat: "dd-mm-yy" });
+  });
+  
+  $(function() {
+    $( "#datepickertest2" ).datepicker({ dateFormat: "dd-mm-yy" });
+  });
+  
+  
   });
   </r:script>
   

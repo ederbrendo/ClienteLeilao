@@ -8,6 +8,7 @@ class Usuario {
 	String endereco
 	String email
 	String telefone
+	
 
     static constraints = {
     }

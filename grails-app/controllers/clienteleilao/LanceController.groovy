@@ -7,18 +7,24 @@ import grails.converters.JSON
 import grails.transaction.Transactional
 import groovy.json.JsonSlurper
 
+/**
+ * @author Eder Brendo
+ *
+ */
+/**
+ * @author Eder Brendo
+ *
+ */
 @Transactional(readOnly = true)
 class LanceController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Lance.list(params), model:[lanceInstanceCount: Lance.count()]
-    }
-
-
-   def create() {
+  
+   /**
+ * Envia as informações sobre o lance escolhido para a pagina
+ */
+def create() {
         //respond new Compra(params)
 		
 		String nome = params["nome"]
@@ -44,7 +50,10 @@ class LanceController {
     }
 
    
-   def lance() {
+   /**
+ * Efetiva Lance
+ */
+def lance() {
 	   
 	   def test = params
 	   
@@ -52,6 +61,14 @@ class LanceController {
 	   
 	   render test as JSON
    }
+   
+   /**
+ *  Mostrar os Lances do usuario
+ */
+def show(){
+	   
 
     }
+   
+}
 

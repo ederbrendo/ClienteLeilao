@@ -1,4 +1,3 @@
-
 <%@ page import="clienteleilao.Compra" %>
 <!DOCTYPE html>
 <html>
