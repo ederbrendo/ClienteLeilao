@@ -46,7 +46,7 @@
 						<td>${list.inicio_servico}</td>
 						<td>${list.duracao_dias}</td>
 						<td>${list.periodo}</td>
-						<td><a href="${createLink(uri: '/compra/create')}?nome=${list.nome}" class="btn btn-default">Contratar</a></td>
+						<td><a href="${createLink(uri: '/compra/create')}?id=${list._id}" class="btn btn-default">Contratar</a></td>
 					</tr>
 				</g:each>
 			</tbody>

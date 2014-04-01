@@ -19,7 +19,7 @@ class ServicoController {
 	 * envia para a página.
 	 */
 	def index() {
-		def test = new URL("http://luizvarela666-public-sales.jit.su/services").text
+		def test = new URL("http://projeto-leilao.herokuapp.com/servicos").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 
@@ -34,7 +34,34 @@ class ServicoController {
 	}
 
 	def create(){
-		respond new Servico(params)
+		categoria()
+		pagamento()
+		
+		respond new Produto(params)
+	}
+	
+	def categoria(){
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/categorias").text
+		def slurper = new JsonSlurper()
+		def categoria = slurper.parseText(test)
+
+		request.setAttribute('categorias',categoria)
+		
+		respond categoria
+	}
+	
+	def pagamento(){
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/tipos_de_pagamento").text
+		def slurper = new JsonSlurper()
+		def pagamento = slurper.parseText(test)
+
+		request.setAttribute('pagamentos', pagamento)
+		
+		
+
+		respond pagamento
 	}
 
 	/**
@@ -43,7 +70,7 @@ class ServicoController {
 	 */
 	def submitForm() {
 		
-		withHttp(uri: "http://luizvarela666-public-sales.jit.su/services") {
+		withHttp(uri: "http://projeto-leilao.herokuapp.com/servico") {
 			def retorno = post(body:params)
 			println retorno
 		}

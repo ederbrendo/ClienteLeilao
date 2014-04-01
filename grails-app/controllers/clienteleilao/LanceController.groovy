@@ -27,9 +27,9 @@ class LanceController {
 def create() {
         //respond new Compra(params)
 		
-		String nome = params["nome"]
+		String id = params["id"]
 		
-		def test = new URL("http://luizvarela666-public-sales.jit.su/products").text
+		def test = new URL("http://projeto-leilao.herokuapp.com/produtos").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 		def cont = 0
@@ -37,7 +37,7 @@ def create() {
 		
 		//for (i in result) {
 		result.each{
-			if(it.nome==nome){
+			if(it._id==id){
 				
 				request.setAttribute('list',result[cont])
 				

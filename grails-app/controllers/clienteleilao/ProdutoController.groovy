@@ -18,7 +18,7 @@ class ProdutoController {
 	def index() {
 
 
-		def test = new URL("http://luizvarela666-public-sales.jit.su/products").text
+		def test = new URL("http://projeto-leilao.herokuapp.com/produtos").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 
@@ -36,19 +36,46 @@ class ProdutoController {
 	 */
 	def submitForm() {
 
-		withHttp(uri: "http://luizvarela666-public-sales.jit.su/products") {
+		withHttp(uri: "http://projeto-leilao.herokuapp.com/produto") {
 			def retorno = post(body:params)
 			println retorno
 		}
 
 
 		flash.message = "Produto Cadastrado com Sucesso!"
-
+		
+		
 		redirect(uri: "/")
 	}
 
 	def create(){
-
+		categoria()
+		pagamento()
+		
 		respond new Produto(params)
+	}
+	
+	def categoria(){
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/categorias").text
+		def slurper = new JsonSlurper()
+		def categoria = slurper.parseText(test)
+
+		request.setAttribute('categorias',categoria)
+		
+		respond categoria
+	}
+	
+	def pagamento(){
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/tipos_de_pagamento").text
+		def slurper = new JsonSlurper()
+		def pagamento = slurper.parseText(test)
+
+		request.setAttribute('pagamentos', pagamento)
+		
+		
+
+		respond pagamento
 	}
 }

@@ -36,9 +36,9 @@ class CompraController {
     def create() {
         //respond new Compra(params)
 		
-		String nome = params["nome"]
+		String id = params["id"]
 		
-		def test = new URL("http://luizvarela666-public-sales.jit.su/services").text
+		def test = new URL("http://projeto-leilao.herokuapp.com/servicos").text
 		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 		def cont = 0
@@ -46,7 +46,7 @@ class CompraController {
 		
 		//for (i in result) {
 		result.each{
-			if(it.nome==nome){
+			if(it._id==id){
 				
 				request.setAttribute('list',result[cont])
 				

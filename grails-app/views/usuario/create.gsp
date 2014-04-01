@@ -7,7 +7,7 @@
 <body>
    		<h3>Cadastrar Usuario: </h3>
 
-   		<form class="form-horizontal" role="form">
+   		<g:form method="post" action="submitFormUsuario" class="form-horizontal" >
 
    			<div class="form-group">
    			  <label class="col-sm-2 control-label">Nome</label>
@@ -19,7 +19,7 @@
    			<div class="form-group">
    			  <label class="col-sm-2 control-label">CPF/CNPJ</label>
    			    <div class="col-sm-10">
-   			      <input name="cpfCnpj" id="cpf"  type="text" required="" class="form-control" placeholder="CPF" style="width:150px">
+   			      <input name="cpfCnpj" type="text" required class="form-control" placeholder="CPF" style="width:150px">
    			    </div>
    			</div>
 
@@ -28,21 +28,21 @@
    			<div class="form-group">
    			  <label class="col-sm-2 control-label">Endereco</label>
    			    <div class="col-sm-10">
-   			      <input name="endereco" type="text" class="form-control" required="" placeholder="Endereco" style="width:300px">
+   			      <input name="endereco" type="text" class="form-control" required placeholder="Endereco" style="width:300px">
    			    </div>
    			</div>
 
         <div class="form-group">
           <label class="col-sm-2 control-label">E-mail</label>
             <div class="col-sm-10">
-              <input name="email" class="form-control" type="email" required="" placeholder="exemplo@sis.com" style="width:300px"></input>
+              <input name="email" class="form-control" type="text" required placeholder="exemplo@sis.com" style="width:300px"></input>
             </div>
         </div>
 
    			<div class="form-group">
    			  <label class="col-sm-2 control-label">Telefone</label>
    			    <div class="col-sm-10">
-   			      <input name="telefone" id="telefone" type="text" required="" class="form-control" placeholder="(DDD) xxxx-xxxx" style="width:150px">
+   			      <input name="telefone" type="text" required class="form-control" placeholder="(DDD) xxxx-xxxx" style="width:150px">
    			    </div>
    			</div>
 
@@ -53,7 +53,7 @@
    			  </div>
    			</div>
 
-   		</form>
+   		</g:form>
    </body>
    </g:if>
 </html>

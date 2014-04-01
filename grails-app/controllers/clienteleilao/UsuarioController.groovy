@@ -27,6 +27,18 @@ class UsuarioController {
         respond new Usuario(params)
     }
 	
+	def submitFormUsuario() {
+		println params
+		
+		withHttp(uri: "http://projeto-leilao.herokuapp.com/usuario") {
+			def retorno = post(body:params)
+			println retorno
+		}
+		flash.message = "Usuario Cadastrado com Sucesso!"
+		
+		redirect(uri: "/")
+	}
+	
 	/**
 	 * UsuarioController.logar() : Coloca o usuário em sessão (Em Construção).
 	 */
