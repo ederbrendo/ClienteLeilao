@@ -25,26 +25,47 @@
           </div>
       </div>
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Descrição</label>
-          <div class="col-sm-10">
-            <input name="descricao" type="text" class="form-control" placeholder="Nome" style="width:400px">
-          </div>
-      </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Tipo de Pagamento</label>
-          <div class="col-sm-10">
-            <input name="tipo_pagamento" type="text" class="form-control" placeholder="Tipo de Pagamento" style="width:150px">
-          </div>
+        <div class="col-sm-10">
+          <select name="tipo_pagamento" class="form-control" style="width:150px">
+              <option>Dinheiro</option>
+              <option>Master Card - 1x</option>
+              <option>Master Card - 2x</option>
+              <option>Master Card - 3x</option>
+              <option>Master Card - 4x</option>
+              <option>Master Card - 5x</option>
+              <option>Master Card - 6x</option>
+              <option>Master Card - 7x</option>
+              <option>Master Card - 8x</option>
+              <option>Master Card - 9x</option>
+              <option>Master Card - 10x</option>
+              <option>Visa - 1x</option>
+              <option>Visa - 2x</option>
+              <option>Visa - 3x</option>
+              <option>Visa - 4x</option>
+              <option>Visa - 5x</option>
+              <option>Visa - 6x</option>
+              <option>Visa - 7x</option>
+              <option>Visa - 8x</option>
+              <option>Visa - 9x</option>
+              <option>Visa - 10x</option>
+          </select>
+        </div>
       </div>
       
-      <div class="form-group">
+       <div class="form-group">
         <label class="col-sm-2 control-label">Categoria</label>
-          <div class="col-sm-10">
-            <input name="categoria" type="text" class="form-control" placeholder="Nome" style="width:400px">
-          </div>
-      </div><%--
+        <div class="col-sm-10">
+          <select name="categoria" class="form-control" style="width:150px">
+              <option>Eletronico</option>
+              <option>Gadgets</option>
+              <option>Informaticax</option>
+              <option>Vestuario</option>
+          </select>
+        </div>
+      </div>
 
 
       <div class="form-group">
@@ -61,19 +82,27 @@
           </div>
       </div>
       
-      --%><div class="form-group">
+      <div class="form-group">
         <label class="col-sm-2 control-label">Tempo de Leilao</label>
           <div class="col-sm-10">
-            <input type="date" name= "tempo_leilao" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
+            <input type="text" name= "tempo_leilao" class="form-control" placeholder="dd/mm/aaaa" style="width:300px">
           </div>
       </div>
       
       <div class="form-group">
         <label class="col-sm-2 control-label">Data de Inicio do Leilao</label>
           <div class="col-sm-10">
-            <input type="date" name="data_inicial"  class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
+            <input type="text" name="data_inicial"  class="form-control" style="width:150px" placeholder="dd/mm/aaaa">
           </div>
       </div>    
+      
+        <div class="form-group">
+        <label class="col-sm-2 control-label">CPF/CNJPJ</label>
+          <div class="col-sm-2">
+            <input name="vendedor" type="text" class="form-control" value="${session.usuario.cpfCnpj}" readonly >
+          </div>
+      </div>
+      
 
 
       <div class="form-group">

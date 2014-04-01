@@ -9,6 +9,39 @@
 	
   <g:form method="post" action="lance" class="form-horizontal" >
  
+ <div class="table-responsive">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Lance Atual</th>
+					<th>Tipo de Pagamento</th>
+					<th>Categoria</th>
+					<th>Tempo Leilao</th>
+				</tr>
+			</thead>
+				<tbody>
+					<tr>
+						<td>
+							${list.nome}
+						</td>
+						<td>
+							${list.valor}
+						</td>
+						<td>
+							${list.tipo_pagamento}
+						</td>
+						<td>
+							${list.categoria}
+						</td>
+						<td>
+							${list.tempo_leilao}
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+ 
   <div class="form-group">
         <label class="col-sm-2 control-label">ID</label>
           <div class="col-sm-8">
