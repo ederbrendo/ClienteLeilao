@@ -29,7 +29,7 @@
 							${list.valor}
 						</td>
 						<td>
-							${list.tipo_pagamento}
+							${list.tipo_pagamento} 
 						</td>
 						<td>
 							${list.categoria}
@@ -43,81 +43,31 @@
 	</div>
  
   <div class="form-group">
-        <label class="col-sm-2 control-label">ID</label>
+        <label class="col-sm-2 control-label">ID do Produto</label>
           <div class="col-sm-8">
-            <input name="_id" type="text" class="form-control" value="${list._id}" readonly >
+            <input name="id_produto" type="text" class="form-control" value="${list._id}" readonly >
           </div>
       </div>
       
-        <div class="form-group">
-        <label class="col-sm-2 control-label">Nome</label>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">ID do Comprador</label>
           <div class="col-sm-8">
-            <input name="nome" type="text" class="form-control" value="${list.nome}" readonly >
+            <input name="id_comprador" type="text" class="form-control" value="${session.usuario.cpfCnpj}" readonly >
           </div>
       </div>
       
-        <div class="form-group">
-        <label class="col-sm-2 control-label">Descrição</label>
-          <div class="col-sm-8">
-            <input name="descricao" type="text" class="form-control" value="${list.descricao}" readonly >
-          </div>
-      </div>
-
-     <div class="form-group">
-        <label class="col-sm-2 control-label">Tipo de Pagamento</label>
-          <div class="col-sm-8">
-            <input name="tipo_pagamento" type="text" class="form-control" value="${list.tipo_pagamento}" readonly >
-          </div>
-      </div>
-   
-   <div class="form-group">
-        <label class="col-sm-2 control-label">Categoria</label>
-          <div class="col-sm-8">
-            <input name="categoria" type="text" class="form-control" value="${list.categoria}" readonly >
-          </div>
-      </div>
-     
-     
-   <div class="form-group">
-        <label class="col-sm-2 control-label">Lance Atual</label>
-          <div class="col-sm-8">
-            <input name="valor_inicial" type="text" class="form-control" value="${list.valor_inicial}" readonly >
-          </div>
-      </div>
-     
-  
-   <div class="form-group">
-        <label class="col-sm-2 control-label">Tempo do leilao</label>
-          <div class="col-sm-8">
-            <input name="tempo_leilao" class="form-control" value="${list.tempo_leilao}" readonly >
-          </div>
-      </div>
-  
-   <div class="form-group">
-        <label class="col-sm-2 control-label">Data Inicial</label>
-          <div class="col-sm-8">
-            <input name="data_inicial" class="form-control" value="${list.data_inicial}" readonly >
-          </div>
-      </div>
-     
-     <div class="form-group">
-        <label class="col-sm-2 control-label">Hora do lance</label>
-          <div class="col-sm-8">
-            <input name="data_hora" class="form-control" value="${new Date()}" readonly >
-          </div>
-      </div>
       
          <div class="form-group">
-        <label class="col-sm-2 control-label">Meu Lance</label>
+        <label class="col-sm-2 control-label">Valor do Lance </label>
           <div class="col-sm-8">
-            <input name="valor" type="text" class="form-control">
+            <input name="valor" type="number" class="form-control">
           </div>
       </div>
       
       
        <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-primary">Dar Lance</button>
+          <button type="submit" class="btn btn-primary">Lance</button>
         </div>
       </div>
       

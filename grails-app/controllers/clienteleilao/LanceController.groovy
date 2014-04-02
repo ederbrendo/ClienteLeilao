@@ -55,11 +55,18 @@ def create() {
  */
 def lance() {
 	   
-	   def test = params
-	   
-	   println test
-	   
-	   render test as JSON
+	
+	withHttp(uri: "http://projeto-leilao.herokuapp.com/lance") {
+		def retorno = post(body:params)
+		println retorno
+		flash.message = "${retorno}"
+	}
+	
+	
+	
+	redirect(uri: "/")
+
+	
    }
    
    /**

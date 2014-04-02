@@ -13,7 +13,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">ID Vendedor</label>
 				<div class="col-sm-8">
-					<input name="id_vendedor" type="text" class="form-control"
+					<input name="cpfCnpj" type="text" class="form-control"
 						value="${session.usuario.cpfCnpj}" readonly>
 				</div>
 			</div>
