@@ -6,12 +6,12 @@
 </head>
 <g:if test="${session.usuario}">
 	<body>
-		<h3>Leiloar Produto:</h3>
+		<h3>Cadastrar Produto:</h3>
 
 		<g:form method="post" action="submitForm" class="form-horizontal">
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label">ID Vendedor</label>
+				<label class="col-sm-2 control-label">CPF Vendedor</label>
 				<div class="col-sm-8">
 					<input name="cpfCnpj" type="text" class="form-control"
 						value="${session.usuario.cpfCnpj}" readonly>

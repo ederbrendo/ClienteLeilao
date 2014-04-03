@@ -5,7 +5,7 @@
 </head>
 <g:if test="${session.usuario}">
 <body>
-    <h3>Vender Serviço: </h3>  
+    <h3>Cadastrar Serviço: </h3>  
 	
     <g:form method="post" action="submitForm"  class="form-horizontal">
   

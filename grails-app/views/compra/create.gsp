@@ -45,7 +45,7 @@
   <div class="form-group">
         <label class="col-sm-2 control-label">ID do Serviço</label>
           <div class="col-sm-8">
-            <input name="id_produto" type="text" class="form-control" value="${list._id}" readonly >
+            <input name="id_servico" type="text" class="form-control" value="${list._id}" readonly >
           </div>
       </div>
       
@@ -56,20 +56,6 @@
           </div>
       </div>
       
-      <div class="form-group">
-				<label class="col-sm-2 control-label">Tipo de Pagamento</label>
-				<div class="col-sm-10">
-					<select onChange="pagamento" name="tipo_pagamento"
-						class="form-control" style="width: 150px">
-
-						<g:each in="${pagamentos}" var="pagamento">
-							<option value="${pagamento.id}">
-								${pagamento.nome}
-							</option>
-						</g:each>
-					</select>
-				</div>
-			</div>
       
        <div class="form-group">
         <label class="col-sm-2 control-label">Tipo da Entrega</label>

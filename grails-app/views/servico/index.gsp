@@ -8,17 +8,7 @@
 <body>
 	<h3>Serviços:</h3>
 
-
-	<%--<select class="form-control">
-		<g:each in="${result}" var="list">
-			<option>Produto:
-				${list.nome} - Valor:
-				${list.valor}
-			</option>
-		</g:each>
-	</select>
-
-	--%><div class="table-responsive">
+<div class="table-responsive">
 		<table class="table table-bordered">
 			<thead>
 					<tr>
