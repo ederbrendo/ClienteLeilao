@@ -8,20 +8,7 @@
     <h3>Vender Serviço: </h3>  
 	
     <g:form method="post" action="submitForm"  class="form-horizontal">
-    <%--
-
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Produto/Servico</label>
-        <div class="col-sm-10">
-          <select class="form-control" style="width:150px">
-              <option>   --   </option>
-              <option>Produto</option>
-              <option>Servico</option>
-          </select>
-        </div>
-      </div>
-
-      --%>
+  
       
            <div class="form-group">
 				<label class="col-sm-2 control-label">CPF Vendedor</label>

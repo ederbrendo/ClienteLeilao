@@ -20,13 +20,17 @@ class CompraController {
 	 * CompraController.comprar(): Em Construção 
 	 */
 	def comprar() {
+		withHttp(uri: "http://projeto-leilao.herokuapp.com/compra") {
+			def retorno = post(body:params)
+			println retorno
+		}
+
+
+		flash.message = "Compra efetuada!"
 		
 		
-		def test = params
+		redirect(uri: "/")
 		
-		println test
-		
-		render test as JSON
 	}
 
     /**
@@ -35,6 +39,7 @@ class CompraController {
      */
     def create() {
         //respond new Compra(params)
+		pagamento()
 		
 		String id = params["id"]
 		
@@ -58,13 +63,19 @@ class CompraController {
 		
     }
 	
-	/**
-	 * Mostrar Compras do Usuario
-	 */
-	def show(){
+	
+	def pagamento(){
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/tipos_de_pagamento").text
+		def slurper = new JsonSlurper()
+		def pagamento = slurper.parseText(test)
+
+		request.setAttribute('pagamentos', pagamento)
 		
 		
+		respond pagamento
 	}
+	
 }
 
 
