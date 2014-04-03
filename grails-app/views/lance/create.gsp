@@ -7,8 +7,7 @@
 <body>
 	<h3>Dados da Lance:</h3>
 	
-  <g:form method="post" action="lance" class="form-horizontal" >
- 
+
  <div class="table-responsive">
 		<table class="table table-bordered">
 			<thead>
@@ -42,6 +41,9 @@
 		</table>
 	</div>
  
+  <g:form method="post" action="lance" class="form-horizontal" >
+  
+  
   <div class="form-group">
         <label class="col-sm-2 control-label">ID do Produto</label>
           <div class="col-sm-8">
@@ -50,9 +52,9 @@
       </div>
       
       <div class="form-group">
-        <label class="col-sm-2 control-label">ID do Comprador</label>
+        <label class="col-sm-2 control-label">CPF do Comprador</label>
           <div class="col-sm-8">
-            <input name="id_comprador" type="text" class="form-control" value="${session.usuario.cpfCnpj}" readonly >
+            <input name="cpfCnpj" type="text" class="form-control" value="${session.usuario.cpfCnpj}" readonly >
           </div>
       </div>
       

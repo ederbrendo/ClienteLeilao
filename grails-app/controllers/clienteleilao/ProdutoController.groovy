@@ -52,6 +52,7 @@ class ProdutoController {
 		categoria()
 		pagamento()
 		
+		
 		respond new Produto(params)
 	}
 	
@@ -78,4 +79,12 @@ class ProdutoController {
 
 		respond pagamento
 	}
+	
+	def maiorLance(){
+		
+		
+		
+		
+	}
+	
 }

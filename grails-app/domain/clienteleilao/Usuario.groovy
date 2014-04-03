@@ -2,7 +2,7 @@ package clienteleilao
 
 class Usuario {
 	
-	int id
+	String id
 	String nome
 	String cpfCnpj
 	String endereco

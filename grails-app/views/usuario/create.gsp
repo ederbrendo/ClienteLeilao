@@ -19,7 +19,7 @@
    			<div class="form-group">
    			  <label class="col-sm-2 control-label">CPF/CNPJ</label>
    			    <div class="col-sm-10">
-   			      <input name="cpfCnpj" type="text" required class="form-control" placeholder="CPF" style="width:150px">
+   			      <input name="cpf_cnpj" type="text" required class="form-control" placeholder="CPF" style="width:150px">
    			    </div>
    			</div>
 

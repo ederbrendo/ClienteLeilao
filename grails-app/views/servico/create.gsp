@@ -24,9 +24,9 @@
       --%>
       
            <div class="form-group">
-				<label class="col-sm-2 control-label">ID Vendedor</label>
+				<label class="col-sm-2 control-label">CPF Vendedor</label>
 				<div class="col-sm-8">
-					<input name="id_vendedor" type="text" class="form-control"
+					<input name="cpfCnpj" type="text" class="form-control"
 						value="${session.usuario.cpfCnpj}" readonly>
 				</div>
 			</div>
@@ -47,28 +47,35 @@
       </div>
 
 
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Tipo de Pagamento</label>
-        <div class="col-sm-10">
-          <select onChange="pagamento" name="tipo_pagamento" class="form-control" style="width:150px">
-          <g:set var="qtd" value="0" />
-          <g:each in="${pagamentos}" var="pagamento">
-              <option>${pagamento.nome}</option>
-              </g:each>
-          </select>
-        </div>
-      </div>
+     <div class="form-group">
+				<label class="col-sm-2 control-label">Tipo de Pagamento</label>
+				<div class="col-sm-10">
+					<select onChange="pagamento" name="tipo_pagamento"
+						class="form-control" style="width: 150px">
+
+						<g:each in="${pagamentos}" var="pagamento">
+							<option value="${pagamento.id}">
+								${pagamento.nome}
+							</option>
+						</g:each>
+					</select>
+				</div>
+			</div>
       
        <div class="form-group">
-        <label class="col-sm-2 control-label">Categoria</label>
-        <div class="col-sm-10">
-          <select onChange="categoria" name="categoria" class="form-control" style="width:150px">
-              <g:each in="${categorias}" var="categoria">
-              <option>${categoria.nome}</option>
-              </g:each>
-          </select>
-        </div>
-      </div>
+				<label class="col-sm-2 control-label">Categoria</label>
+				<div class="col-sm-10">
+					<select onChange="categoria" name="categoria" class="form-control"
+						style="width: 150px">
+
+						<g:each in="${categorias}" var="categoria">
+							<option value="${categoria.nome}">
+								${categoria.nome}
+							</option>
+						</g:each>
+					</select>
+				</div>
+			</div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Inicio do Serviço</label>

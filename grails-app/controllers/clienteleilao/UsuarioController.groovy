@@ -4,6 +4,7 @@ package clienteleilao
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import groovy.json.JsonSlurper
 
 /**
  * @author Ederbrendo
@@ -43,16 +44,36 @@ class UsuarioController {
 	 * UsuarioController.logar() : Coloca o usuário em sessão (Em Construção).
 	 */
 	def logar(){
-	
-		def usuario = new Usuario()
 		
-		usuario.cpfCnpj = params.cpfCnpj
+		String cpf = params.cpfCnpj
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/usuarios").text
+		def slurper = new JsonSlurper()
+		def result = slurper.parseText(test)
+		def cont = 0
+		
+		//for (i in result) {
+		result.each{
+			if(it.cpfCnpj==cpf){
+				def usuario = new Usuario()
+				
+				usuario.cpfCnpj = params.cpfCnpj
+				usuario.nome = it.nome
+				usuario.endereco = it.endereco
+				usuario.email = it.email
+				usuario.id = it._id
 		
 		session.usuario = usuario
 		
-		flash.message = "Bem vindo ${session.usuario.cpfCnpj}!"
+		flash.message = "Bem vindo ${it.nome}!"
+		
+			
+			}
+		}
+		
 		
 			redirect(uri: "/")
+		
 	}
 	
 	/**
@@ -60,7 +81,7 @@ class UsuarioController {
 	 */
 	def logout() {
 		
-		def saida = "${session.usuario.cpfCnpj}"
+		def saida = "${session.usuario.nome}"
 		
 		session.removeAttribute("usuario");
 		session.invalidate()
@@ -73,13 +94,14 @@ class UsuarioController {
 	
 	def compras() {
 		
-		
 	}
 	
 	def lances() {
 		
 		
 	}
-
+	
+		
+		
    
 }
