@@ -7,13 +7,15 @@
 <body>
 	<h3>Dados da Lance:</h3>
 	
+	<g:set var="maiorLance" value="${maior}" scope="page" />
 
  <div class="table-responsive">
 		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>Nome</th>
-					<th>Lance Atual</th>
+					<th>Valor Inicial</th>
+					<th>Maior Lance Atual</th>
 					<th>Tipo de Pagamento</th>
 					<th>Categoria</th>
 					<th>Tempo Leilao</th>
@@ -25,7 +27,10 @@
 							${list.nome}
 						</td>
 						<td>
-							${list.valor}
+							${list.valor_inicial}
+						</td>
+						<td>
+							${maiorLance?.valor}
 						</td>
 						<td>
 							${list.tipo_pagamento} 

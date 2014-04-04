@@ -11,10 +11,6 @@ import groovy.json.JsonSlurper
  * @author Eder Brendo
  *
  */
-/**
- * @author Eder Brendo
- *
- */
 @Transactional(readOnly = true)
 class LanceController {
 
@@ -25,9 +21,10 @@ class LanceController {
  * Envia as informações sobre o lance escolhido para a pagina
  */
 def create() {
-        //respond new Compra(params)
 		
 		String id = params["id"]
+		
+		maiorLance(id)
 		
 		def test = new URL("http://projeto-leilao.herokuapp.com/produtos").text
 		def slurper = new JsonSlurper()
@@ -69,13 +66,38 @@ def lance() {
 	
    }
    
-   /**
- *  Mostrar os Lances do usuario
- */
-def show(){
-	   
 
-    }
+
+/**
+ * Se URL==null, crie um JSON com valor=0
+ */
+def maiorLance(def id){
+	//http://projeto-leilao.herokuapp.com/lance/compra/id_produto
+	
+	def slurper = new JsonSlurper()
+	def test = new URL("http://projeto-leilao.herokuapp.com/lance/compra/${id}").text
+	
+	def isNull = "${test}"
+	
+	if(isNull=="null"){
+		def test2="""{"valor": 0}"""
+		
+		def maiorLance = slurper.parseText(test2)
+		
+		request.setAttribute('maior', maiorLance)
+		
+		respond "ok"
+		
+	}else{
+	
+	def maiorLance = slurper.parseText(test)
+
+	request.setAttribute('maior', maiorLance)
+	}
+	
+	respond "ok"
+	
+}
    
 }
 

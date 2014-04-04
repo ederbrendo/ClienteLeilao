@@ -14,10 +14,9 @@
 				<tr>
 					<th>ID</th>
 					<th>Nome</th>
-					<th>Valor</th>
+					<th>Valor Inicial</th>
 					<th>Tipo de Pagamento</th>
 					<th>Categoria</th>
-					<th>Valor Inicial</th>
 					<th>Tempo Leilao</th>
 					<th>Data Inicial</th>
 					<th>Nome do Vendedor</th>
@@ -34,16 +33,13 @@
 							${list.nome}
 						</td>
 						<td>
-							${list.valor}
+							R$${list.valor}
 						</td>
 						<td>
 							${list.tipo_pagamento}
 						</td>
 						<td>
 							${list.categoria}
-						</td>
-						<td>
-							${list.valor_inicial}
 						</td>
 						<td>
 							${list.tempo_leilao}

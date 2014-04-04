@@ -80,11 +80,6 @@ class ProdutoController {
 		respond pagamento
 	}
 	
-	def maiorLance(){
-		
-		
-		
-		
-	}
+	
 	
 }
