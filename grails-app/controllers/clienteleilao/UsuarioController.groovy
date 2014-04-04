@@ -123,6 +123,43 @@ class UsuarioController {
 		
 	}
 	
+	def vendas(){
+		produtos()
+		servicos()
+		
+		respond "ok"
+		
+		
+	}
+	
+	def produtos(){
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/produto/${session.usuario.cpfCnpj}").text
+		def slurper = new JsonSlurper()
+		def produtos = slurper.parseText(test)
+		
+		
+		request.setAttribute('produtos',produtos)
+		
+		respond "ok"
+		
+		
+	}
+	
+	def servicos(){
+		
+		def test = new URL("http://projeto-leilao.herokuapp.com/servico/${session.usuario.cpfCnpj}").text
+		def slurper = new JsonSlurper()
+		def servicos = slurper.parseText(test)
+		
+		
+		request.setAttribute('servicos',servicos)
+		
+		respond "ok"
+		
+		
+	}
+	
 		
 		
    

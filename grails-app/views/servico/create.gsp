@@ -21,7 +21,7 @@
           <div class="form-group">
         <label class="col-sm-2 control-label">Nome</label>
           <div class="col-sm-10">
-            <input name="nome" type="text" class="form-control" placeholder="Nome" style="width:400px">
+            <input name="nome" type="text" class="form-control" placeholder="Nome" style="width:400px" required>
           </div>
       </div>
       
@@ -29,7 +29,7 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Valor</label>
           <div class="col-sm-10">
-            <input name="valor" type="text" class="form-control" placeholder="Valor" style="width:150px">
+            <input name="valor" type="text" class="form-control" placeholder="Valor" style="width:150px" required>
           </div>
       </div>
 
@@ -38,7 +38,7 @@
 				<label class="col-sm-2 control-label">Tipo de Pagamento</label>
 				<div class="col-sm-10">
 					<select onChange="pagamento" name="tipo_pagamento"
-						class="form-control" style="width: 150px">
+						class="form-control" style="width: 150px" required>
 
 						<g:each in="${pagamentos}" var="pagamento">
 							<option value="${pagamento.id}">
@@ -53,7 +53,7 @@
 				<label class="col-sm-2 control-label">Categoria</label>
 				<div class="col-sm-10">
 					<select onChange="categoria" name="categoria" class="form-control"
-						style="width: 150px">
+						style="width: 150px" required>
 
 						<g:each in="${categorias}" var="categoria">
 							<option value="${categoria.nome}">
@@ -67,21 +67,21 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Inicio do Serviço</label>
           <div class="col-sm-10">
-            <input id="datepicker" name="inicio_servico" type="text" class="form-control" style="width:150px" >
+            <input id="datepicker" name="inicio_servico" type="text" class="form-control" style="width:150px" required >
           </div>
       </div>    
       
       <div class="form-group">
         <label class="col-sm-2 control-label">Duração dias</label>
           <div class="col-sm-2">
-            <input name="duracao_dias" type="number" class="form-control" placeholder="Dias" style="width:400px">
+            <input name="duracao_dias" type="number" class="form-control" placeholder="Dias" style="width:400px" required>
           </div>
       </div>
       
       <div class="form-group">
         <label class="col-sm-2 control-label">Periodo</label>
           <div class="col-sm-10">
-            <input name="periodo" type="text" class="form-control" placeholder="Periodo" style="width:400px">
+            <input name="periodo" type="text" class="form-control" placeholder="Periodo" style="width:400px" required>
           </div>
       </div>
       
@@ -103,16 +103,10 @@
     
     lang:'pt' , 
     timepicker:false,
-    format:'d/m/Y'
+    format:'m/d/Y'
     
     });
     
-    $('#datetimepicker').datetimepicker({
-    
-    lang:'pt',
-    format:'d/m/Y H:i'
-    
-    });
   });
   </r:script>
   

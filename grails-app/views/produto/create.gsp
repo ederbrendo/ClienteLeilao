@@ -22,7 +22,7 @@
 				<label class="col-sm-2 control-label">Nome</label>
 				<div class="col-sm-10">
 					<input name="nome" type="text" class="form-control"
-						placeholder="Nome" style="width: 400px">
+						placeholder="Nome" style="width: 400px" required>
 				</div>
 			</div>
 
@@ -31,7 +31,7 @@
 				<label class="col-sm-2 control-label">Valor</label>
 				<div class="col-sm-10">
 					<input name="valor" type="text" class="form-control"
-						placeholder="Valor" style="width: 150px">
+						placeholder="Valor" style="width: 150px" required>
 				</div>
 			</div>
 
@@ -40,7 +40,7 @@
 				<label class="col-sm-2 control-label">Tipo de Pagamento</label>
 				<div class="col-sm-10">
 					<select onChange="pagamento" name="tipo_pagamento"
-						class="form-control" style="width: 150px">
+						class="form-control" style="width: 150px" required>
 
 						<g:each in="${pagamentos}" var="pagamento">
 							<option value="${pagamento.id}">
@@ -55,7 +55,7 @@
 				<label class="col-sm-2 control-label">Categoria</label>
 				<div class="col-sm-10">
 					<select onChange="categoria" name="categoria" class="form-control"
-						style="width: 150px">
+						style="width: 150px" required>
 
 						<g:each in="${categorias}" var="categoria">
 							<option value="${categoria.nome}">
@@ -72,7 +72,7 @@
 				<div class="col-sm-10">
 					<input name="valor_inicial" type="number" step="any"
 						class="form-control" placeholder="Valor inicial"
-						style="width: 150px">
+						style="width: 150px" required>
 				</div>
 			</div>
 
@@ -81,15 +81,15 @@
 				<div class="col-sm-10">
 					<input name="valor_final" type="number" step="any"
 						class="form-control" placeholder="Valor Maximo"
-						style="width: 150px">
+						style="width: 150px" required>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Tempo de Leilao</label>
 				<div class="col-sm-10">
-					<input type="text" id="datetimepicker" name="tempo_leilao"
-						class="form-control" placeholder="dd/mm/aaaa" style="width: 300px">
+					<input type="text" id="datepicker" name="tempo_leilao"
+						class="form-control" placeholder="dd/mm/aaaa" style="width: 300px" required>
 				</div>
 			</div>
 
@@ -109,53 +109,16 @@
 		´
 
 		<r:script>
-  $(function() {
+   $(function() {
     $( "#datepicker" ).datetimepicker({
     
     lang:'pt' , 
     timepicker:false,
-    format:'d/m/Y'
+    format:'m/d/Y'
     
     });
     
-    $('#datetimepicker').datetimepicker({
-    
-    lang:'pt',
-    timepicker:false,
-    format:'d/m/Y'
-    
-    });
-    
-    $('#datetimepicker2').datetimepicker({
-    
-    lang:'pt',
-    timepicker:false,
-    format:'d/m/Y'
-    
-    });
-    
-    $(function() {
-    $( "#datepickertest1" ).datepicker({ dateFormat: "dd-mm-yy" });
   });
-  
-  $(function() {
-    $( "#datepickertest2" ).datepicker({ dateFormat: "dd-mm-yy" });
-  });
-  
-  
-  });
-  
-  function categoria() {
-		document.test.action = "categoria";
-		document.test.submit();
-		alert("ok");
-	}
-	
-	 function categoria() {
-		document.test.action = "pagamento";
-		document.test.submit();
-		alert("ok");
-	}
 	
   </r:script>
 

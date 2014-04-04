@@ -67,7 +67,7 @@
          <div class="form-group">
         <label class="col-sm-2 control-label">Valor do Lance </label>
           <div class="col-sm-8">
-            <input name="valor" type="number" class="form-control">
+            <input name="valor" type="number" class="form-control" required>
           </div>
       </div>
       

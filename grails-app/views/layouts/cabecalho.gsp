@@ -43,81 +43,67 @@ body {
 				<a class="navbar-brand" href="${createLink(uri: '/')}">Cliente
 					Leilão</a>
 			</div>
-			<%--<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<g:if test="${session.usuario}">
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Menu Principal <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-header">Vendas</li>
-								<li><a href="${createLink(uri: '/produto/create')}"">Leiloar
-										- Produto</a></li>
-								<li><a href="${createLink(uri: '/servico/create')}">Vender
-										- Serviço</a></li>
-								<li class="divider"></li>
-								<li class="dropdown-header">Compras</li>
-								<li><a href="${createLink(uri: '/produto/index')}">Dar
-										um lance - Produto</a></li>
-								<li><a href="${createLink(uri: '/servico/index')}">Contratar
-										- Serviço</a></li>
-								<li class="divider"></li>
-								<li class="dropdown-header">Usuario</li>
-								<li><a href="${createLink(uri: '/usuario/compras')}">Minhas Compras</a></li>
-								<li><a href="${createLink(uri: 'usuario/lances')}">Meus Lances</a></li>
-							</ul></li>
-					</g:if>
-				</ul>
 
-				--%>
-				<div class="collapse navbar-collapse">
+			<div class="collapse navbar-collapse">
 				<g:if test="${session.usuario}">
-				<ul class="nav navbar-nav">
-					
+					<ul class="nav navbar-nav">
+
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">Produtos <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="${createLink(uri: '/produto/create')}"">Leiloar Produto</a></li>
+								<li><a href="${createLink(uri: '/produto/create')}"">Leiloar
+										Produto</a></li>
 								<li><a href="${createLink(uri: '/produto/index')}">Dar
 										um lance</a></li>
-				</ul>
-				</ul>
-				<ul class="nav navbar-nav">
-					
+							</ul>
+					</ul>
+					<ul class="nav navbar-nav">
+
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">Serviços <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="${createLink(uri: '/servico/create')}">Vender</a></li>
 								<li><a href="${createLink(uri: '/servico/index')}">Contratar</a></li>
-				</ul>
-				</ul>
-				
-				<ul class="nav navbar-nav">
-					
+							</ul>
+					</ul>
+
+					<ul class="nav navbar-nav">
+
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">Minhas compras <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-							<li class="dropdown-header">Lances</li>
+								<li class="dropdown-header">Lances</li>
 								<li><a href="${createLink(uri: '/usuario/lances')}">Produtos</a></li>
 								<li class="dropdown-header">Compras</li>
 								<li><a href="${createLink(uri: '/usuario/compras')}">Serviços</a></li>
-				</ul>
-				</ul>
-				
-				<ul class="nav navbar-nav">
-					
+							</ul>
+					</ul>
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">Minhas Vendas <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="${createLink(uri: '/usuario/vendas')}">Vendas</a></li>
+
+							</ul>
+					</ul>
+
+					<ul class="nav navbar-nav">
+
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">Outros <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-							<li class="dropdown-header">Lances</li>
-								<li><a href="${createLink(uri: '/tipoPagamento/show')}">Tipos de Pagamento</a></li>
+								<li class="dropdown-header">Lances</li>
+								<li><a href="${createLink(uri: '/tipoPagamento/show')}">Tipos
+										de Pagamento</a></li>
 								<li class="dropdown-header">Compras</li>
 								<li><a href="${createLink(uri: '/categoria/show')}">Categorias</a></li>
-				</ul>
-				</ul>
-				
+							</ul>
+					</ul>
+
 				</g:if>
-				
-				
+
+
 				<div class="navbar-collapse collapse">
 					<g:if test="${!session.usuario}">
 						<g:form method="post" controller="Usuario" action="logar"

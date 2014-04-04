@@ -60,7 +60,7 @@
        <div class="form-group">
         <label class="col-sm-2 control-label">Tipo da Entrega</label>
           <div class="col-sm-8">
-            <input name="tipo_entrega" type="text" class="form-control"  >
+            <input name="tipo_entrega" type="text" class="form-control" required>
           </div>
       </div>
       
