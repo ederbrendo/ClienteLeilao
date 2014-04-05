@@ -8,7 +8,7 @@
 	<body>
 		<h3>Cadastrar Produto:</h3>
 
-		<g:form method="post" action="submitForm" class="form-horizontal">
+		<g:form method="post" action="cadastrarProduto" class="form-horizontal">
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label">CPF Vendedor</label>
@@ -30,7 +30,7 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Valor</label>
 				<div class="col-sm-10">
-					<input name="valor" type="text" class="form-control"
+					<input name="valor" type="number" class="form-control"
 						placeholder="Valor" style="width: 150px" required>
 				</div>
 			</div>

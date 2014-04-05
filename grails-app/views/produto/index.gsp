@@ -50,7 +50,7 @@
 						<td>
 							${list.vendedor.nome}
 						</td>
-						<td><a href="${createLink(uri: '/lance/create')}?id=${list._id}" class="btn btn-default">Dar Lance</a></td></td>
+						<td><a href="${createLink(uri: '/lance/create/')}${list._id}" class="btn btn-default">Dar Lance</a></td></td>
 					</tr>
 			</g:each>
 			</tbody>

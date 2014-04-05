@@ -10,18 +10,17 @@ import groovy.json.JsonSlurper
 class CategoriaController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+	
+	def slurper = new JsonSlurper()
 
-
-    def show(Categoria categoriaInstance) {
+    def show() {
        
-		
 		def test = new URL("http://projeto-leilao.herokuapp.com/categorias").text
-		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 
 		request.setAttribute('result',result)
 
-		respond result
+		respond "ok"
     
     }
 

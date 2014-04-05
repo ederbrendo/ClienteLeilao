@@ -29,7 +29,7 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Valor</label>
           <div class="col-sm-10">
-            <input name="valor" type="text" class="form-control" placeholder="Valor" style="width:150px" required>
+            <input name="valor" type="number" class="form-control" placeholder="Valor" style="width:150px" required>
           </div>
       </div>
 

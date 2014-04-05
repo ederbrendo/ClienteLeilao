@@ -10,17 +10,16 @@ import groovy.json.JsonSlurper
 class TipoPagamentoController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+	def slurper = new JsonSlurper()
 
-
-    def show(TipoPagamento tipoPagamentoInstance) {
+    def show() {
 		
 		def test = new URL("http://projeto-leilao.herokuapp.com/tipos_de_pagamento").text
-		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 
 		request.setAttribute('result',result)
 
-		respond result
+		respond "ok"
     }
 
    

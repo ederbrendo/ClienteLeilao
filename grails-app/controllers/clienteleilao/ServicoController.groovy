@@ -13,55 +13,49 @@ import groovy.json.JsonSlurper
 class ServicoController {
 
 	static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+	def slurper = new JsonSlurper()
+	
 	/**
-	 * ServicoController.index(): Recebe o JSON da URL e Converte para um HASHMAP, em seguida
+	 * ServicoController.index(): Recebe o JSON da URL e Converte para uma LIST, em seguida
 	 * envia para a página.
 	 */
 	def index() {
 		def test = new URL("http://projeto-leilao.herokuapp.com/servicos").text
-		def slurper = new JsonSlurper()
 		def result = slurper.parseText(test)
 
 		request.setAttribute('result',result)
 
-		respond result
+		respond "ok"
 	}
 
-
-	def show(Servico servicoInstance) {
-		respond servicoInstance
-	}
 
 	def create(){
 		categoria()
 		pagamento()
 		
-		respond new Servico(params)
+		respond "ok"
 	}
 	
 	def categoria(){
 		
 		def test = new URL("http://projeto-leilao.herokuapp.com/categorias").text
-		def slurper = new JsonSlurper()
 		def categoria = slurper.parseText(test)
 
 		request.setAttribute('categorias',categoria)
 		
-		respond categoria
+		respond "ok"
 	}
 	
 	def pagamento(){
 		
 		def test = new URL("http://projeto-leilao.herokuapp.com/tipos_de_pagamento").text
-		def slurper = new JsonSlurper()
 		def pagamento = slurper.parseText(test)
 
 		request.setAttribute('pagamentos', pagamento)
 		
 		
 
-		respond pagamento
+		respond "ok"
 	}
 
 	/**
@@ -72,7 +66,6 @@ class ServicoController {
 		
 		withHttp(uri: "http://projeto-leilao.herokuapp.com/servico") {
 			def retorno = post(body:params)
-			println retorno
 		}
 		flash.message = "Serviço Cadastrado com Sucesso!"
 
